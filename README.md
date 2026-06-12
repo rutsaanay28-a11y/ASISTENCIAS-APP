@@ -38,3 +38,42 @@ El sistema genera una asistencia única para cada participante o entrada registr
 Cuando el usuario presenta su código QR, la aplicación realiza el escaneo y extrae el UUID contenido en él. Posteriormente, el backend valida la existencia y estado de dicho identificador en la base de datos para confirmar la asistencia correspondiente.
 
 Este mecanismo garantiza que cada registro sea único y evita duplicidades o validaciones incorrectas.
+
+## Características Principales
+
+### Registro de Asistencias
+- Escaneo de códigos QR.
+- Validación automática de registros.
+- Confirmación inmediata de asistencia.
+- Prevención de registros duplicados.
+
+### Administración de Usuarios
+- Alta de usuarios.
+- Modificación de información.
+- Consulta de usuarios registrados.
+- Gestión de permisos y accesos.
+
+### Gestión de Entradas
+- Creación de entradas o registros de asistencia.
+- Generación de códigos QR únicos.
+- Asociación de UUID a cada entrada.
+- Control y seguimiento de accesos.
+
+### Seguridad
+- Uso de UUID como identificador único.
+- Validación de datos desde el servidor.
+- Integridad de la información almacenada.
+- Comunicación entre cliente y servidor mediante API REST.
+
+## Beneficios
+
+- Automatización del proceso de registro de asistencias.
+- Reducción de errores humanos.
+- Mayor velocidad en el control de acceso.
+- Trazabilidad completa de los registros.
+- Escalabilidad para eventos de distintos tamaños.
+- Administración centralizada de usuarios y entradas.
+
+## Resultado Esperado
+
+La implementación de este sistema permitirá contar con una plataforma moderna para el control de asistencias basada en tecnología móvil y códigos QR, proporcionando una gestión eficiente de usuarios, entradas y registros de acceso mediante una arquitectura robusta compuesta por React Native, C#, Entity Framework y PostgreSQL.
