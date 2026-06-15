@@ -94,6 +94,62 @@ Este mecanismo garantiza que cada registro sea único y evita duplicidades o val
 - Trazabilidad completa de los registros.
 - Escalabilidad para eventos de distintos tamaños.
 - Administración centralizada de usuarios y entradas.
+## Metodología Ágil
+
+### Marco de Trabajo Seleccionado: Scrum
+
+Se seleccionó Scrum debido a que el proyecto cuenta con requisitos claramente identificados y puede desarrollarse mediante entregas incrementales.
+
+El uso de Scrum permite organizar el trabajo en sprints, facilitar la colaboración del equipo y validar continuamente las funcionalidades desarrolladas.
+
+### Roles
+
+#### Product Owner
+Responsable de definir los requerimientos y prioridades del proyecto.
+
+#### Scrum Master
+Responsable de coordinar el proceso de desarrollo y asegurar el cumplimiento de la metodología.
+
+#### Equipo de Desarrollo
+Responsable de implementar la aplicación móvil, el backend y la base de datos.
+
+## Product Backlog
+
+### HU-01
+Como administrador quiero registrar usuarios para gestionar el acceso al sistema.
+
+### HU-02
+Como administrador quiero generar códigos QR únicos para identificar asistencias.
+
+### HU-03
+Como usuario quiero escanear un código QR para registrar mi asistencia rápidamente.
+
+### HU-04
+Como administrador quiero consultar reportes para analizar las asistencias registradas.
+
+### HU-05
+Como administrador quiero administrar eventos para controlar sus participantes.
+
+## Planeación de Sprints
+
+### Sprint 1
+- Configuración del proyecto.
+- Diseño de base de datos.
+- Gestión de usuarios.
+
+### Sprint 2
+- Desarrollo de API REST.
+- Generación de códigos QR.
+
+### Sprint 3
+- Escaneo y validación de QR.
+- Registro de asistencias.
+
+### Sprint 4
+- Reportes.
+- Pruebas.
+- Corrección de errores.
+- Documentación final.
 
 ## Resultado Esperado
 
