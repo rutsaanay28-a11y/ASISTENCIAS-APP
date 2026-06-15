@@ -5,13 +5,33 @@
 
 ## Descripción General
 
-El presente proyecto consiste en el desarrollo de una aplicación móvil para el registro y control de asistencias utilizando códigos QR. La solución está diseñada para optimizar el proceso de validación de entradas y registro de participantes en eventos, capacitaciones, reuniones o cualquier actividad que requiera control de acceso.
+El presente proyecto consiste en el desarrollo de una aplicación móvil para el registro y control de asistencias y saliddas utilizando códigos QR. La solución está diseñada para optimizar el proceso de validación de entradas y registro de participantes en eventos, capacitaciones, reuniones o cualquier actividad que requiera control de acceso.
 
 La aplicación móvil ha sido desarrollada utilizando **React Native**, permitiendo su funcionamiento en diferentes plataformas móviles. Por su parte, el backend fue implementado en **C#** utilizando **Entity Framework (EF)** como herramienta de acceso a datos y **PostgreSQL** como sistema gestor de base de datos.
 
 ## Objetivo
 
 Desarrollar una plataforma que permita registrar asistencias de manera rápida, segura y eficiente mediante la lectura de códigos QR únicos, reduciendo errores manuales y facilitando la administración de usuarios y registros de acceso.
+
+## Problema de Negocio
+
+Las instituciones educativas, empresas y organizaciones que realizan eventos, capacitaciones o reuniones suelen registrar la asistencia de manera manual, provocando retrasos en el acceso de los participantes, errores en los registros y dificultades para generar reportes confiables.
+
+En eventos con aproximadamente 100 asistentes, el proceso de registro puede requerir hasta 300 minutos acumulados de atención, afectando la eficiencia operativa y la experiencia de los participantes.
+
+## Impacto del Problema
+
+- Retrasos durante el ingreso de asistentes.
+- Errores humanos en la captura de información.
+- Dificultad para consultar asistencias históricas.
+- Mayor carga administrativa para generar reportes.
+- Riesgo de registros duplicados o incorrectos.
+
+## Solución Propuesta
+
+Desarrollar una aplicación móvil que permita registrar asistencias mediante códigos QR únicos asociados a cada participante o entrada.
+
+El sistema automatiza la validación de accesos y almacena la información en tiempo real, permitiendo una gestión eficiente de usuarios, eventos y reportes.
 
 ## Arquitectura Tecnológica
 
