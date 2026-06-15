@@ -1,6 +1,7 @@
 # Resumen del Proyecto
 
 ## Nombre del Proyecto
+
 **Sistema de Control de Asistencias mediante Código QR**
 
 ## Descripción General
@@ -53,7 +54,7 @@ El sistema automatiza la validación de accesos y almacena la información en ti
 
 ## Funcionamiento del Sistema
 
-El sistema genera una asistencia única para cada participante o entrada registrada. Cada asistencia posee un identificador único universal (**UUID**), el cual se almacena dentro de un código QR.
+El sistema genera una asistencia única para cada participante o entrada registrada. Cada asistencia posee un identificador único universal (**UID**), el cual se almacena dentro de un código QR.
 
 Cuando el usuario presenta su código QR, la aplicación realiza el escaneo y extrae el UUID contenido en él. Posteriormente, el backend valida la existencia y estado de dicho identificador en la base de datos para confirmar la asistencia correspondiente.
 
