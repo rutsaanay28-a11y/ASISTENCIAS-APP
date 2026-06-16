@@ -1,18 +1,18 @@
-#SRS – Sistema de Control de Asistencia mediante Código QR
+# SRS – Sistema de Control de Asistencia mediante Código QR
 
-##Persona: Administrador y Empleado (Asistente)
+## Persona: Administrador y Empleado (Asistente)
 
-###Requerimientos Funcionales (Logos)
+### Requerimientos Funcionales (Logos)
 
-####RF-01
+#### RF-01
 
 El sistema debe permitir crear, editar y eliminar eventos corporativos.(A)
 
-####RF-02
+#### RF-02
 
 El sistema debe permitir registrar y administrar empleados participantes.(A)
 
-####RF-03
+#### RF-03
 
 El sistema debe generar un código QR único para cada asistencia registrada.(A)
 
