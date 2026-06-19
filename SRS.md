@@ -6,7 +6,7 @@
 
 #### RF-01
 
-El sistema debe permitir crear, editar y eliminar eventos corporativos.(A)
+El sistema debe permitir crear, editar y eliminar eventos.(A)
 
 #### RF-02
 
@@ -18,7 +18,7 @@ El sistema debe generar un código QR único para cada asistencia registrada.(A)
 
 #### RF-04
 
-El sistema debe validar y registrar asistencias mediante el escaneo de códigos QR.(A)
+El sistema debe validar y registrar asistencias mediante el escaneo de códigos QR o manualmente.(A)
 
 #### RF-05
 
@@ -30,7 +30,7 @@ El sistema debe permitir registrar la asistencia mediante el escaneo del código
 
 #### RX-01
 
-El administrador debe poder crear un evento en menos de 2 minutos.(A)
+El administrador debe poder crear un evento en menos tiempo.(A)
 
 #### RX-02
 
@@ -46,7 +46,7 @@ El sistema debe mostrar mensajes claros cuando ocurra un error en la validación
 
 #### RX-05
 
-El empleado debe poder registrar su asistencia en menos de 5 segundos para minimizar filas y tiempos de espera.(U)
+El empleado debe poder registrar su asistencia en menor tiempo para minimizar filas y tiempos de espera.(U)
 
 ---
 
