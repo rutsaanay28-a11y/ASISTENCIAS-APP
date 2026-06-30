@@ -11,3 +11,4 @@
 | QA-007 | Edición de Empleado | Administración | Base de Datos | Se actualiza la información | PASA |
 | QA-008 | Eliminación de Empleado | Administración | Base de Datos | El empleado se elimina correctamente | PASA |
 | QA-009 | Generación de QR | Administración | Generador QR | Se crea un QR único | PASA |
+| QA-010 | Registro de Asistencia Manual | Backend | Base de Datos | La asistencia queda guardada sin necesidad de QR | FALLA (pendiente) |
