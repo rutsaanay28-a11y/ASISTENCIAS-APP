@@ -9,7 +9,6 @@
 | Lenguaje | C# 12 |
 | Runtime | .NET 8 |
 | Patrón arquitectónico | CQRS + MediatR |
-| ORM | Entity Framework Core |
 | Validación | FluentValidation |
 | Simulación de dependencias | Moq |
 | Base de datos de prueba | Entity Framework Core InMemory |
@@ -88,7 +87,6 @@
 | xUnit | Framework para pruebas unitarias |
 | Moq | Simulación de dependencias |
 | Entity Framework Core InMemory | Simulación de la base de datos |
-| FluentValidation | Validación de datos de entrada |
 
 ---
 
