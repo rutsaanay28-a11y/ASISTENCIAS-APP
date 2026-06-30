@@ -1,167 +1,112 @@
-# Plan de Pruebas Unitarias
+# Plan de Pruebas Unitarias (Propuesta)
 
-## 1. Información general
+# 1. Información General
 
-  -----------------------------------------------------------------------
-  Elemento                       Descripción
-  ------------------------------ ----------------------------------------
-  Capa a probar                  Aplicación (Application)
+| Elemento | Descripción |
+|----------|-------------|
+| Capa a probar | Aplicación (Application) |
+| Framework de pruebas | xUnit |
+| Lenguaje | C# 12 |
+| Runtime | .NET 8 |
+| Patrón arquitectónico | CQRS + MediatR |
+| ORM | Entity Framework Core |
+| Validación | FluentValidation |
+| Simulación de dependencias | Moq |
+| Base de datos de prueba | Entity Framework Core InMemory |
 
-  Patrón arquitectónico          CQRS + MediatR
+---
 
-  Framework de pruebas           xUnit
+# 2. Función Seleccionada
 
-  Lenguaje                       C# 12
+| Elemento | Descripción |
+|----------|-------------|
+| Función | Registrar asistencia mediante código QR |
+| Método (propuesto) | `RegistrarAsistenciaCommandHandler` |
+| Entrada | UUID del código QR |
+| Salida | Confirmación o rechazo del registro |
+| Tecnologías relacionadas | MediatR, Entity Framework Core y FluentValidation |
 
-  Runtime                        .NET 8
+---
 
-  Base de datos para pruebas     Entity Framework Core InMemory
-                                 (propuesta)
+# 3. Prueba 1 – Camino Feliz
 
-  Simulación de dependencias     Moq (propuesta)
+| Etapa (AAA) | Descripción |
+|--------------|-------------|
+| **Arrange** | Preparar un UUID válido asociado a un empleado y a un evento activo. |
+| **Act** | Ejecutar el método `RegistrarAsistenciaCommandHandler`. |
+| **Assert** | Verificar que la asistencia sea registrada correctamente. |
 
-  Validaciones                   FluentValidation
-  -----------------------------------------------------------------------
+### Resultado esperado
 
-## 2. Justificación
+ Validación 
+|------------|
+| Registro exitoso |  
+| Devuelve respuesta de éxito | 
+| Guarda la asistencia en la base de datos | 
 
-  -----------------------------------------------------------------------
-  Aspecto                       Explicación
-  ----------------------------- -----------------------------------------
-  ¿Por qué esta capa?           La capa de Aplicación contiene la lógica
-                                de negocio del sistema.
+---
 
-  ¿Por qué no el Controller?    El Controller solo recibe las peticiones
-                                HTTP y delega la ejecución al Handler de
-                                MediatR.
+# 4. Prueba 2 – Camino Triste
 
-  ¿Qué se prueba?               Los Handlers y las reglas de validación
-                                que registran y validan las asistencias.
+| Etapa (AAA) | Descripción |
+|--------------|-------------|
+| **Arrange** | Preparar un UUID inexistente o inválido. |
+| **Act** | Ejecutar el método `RegistrarAsistenciaCommandHandler`. |
+| **Assert** | Verificar que el sistema rechace el registro. |
 
-  ¿Qué se simula?               La conexión con PostgreSQL mediante
-                                Entity Framework Core InMemory o Moq para
-                                aislar la lógica.
-  -----------------------------------------------------------------------
+### Resultado esperado
 
-# Función seleccionada
+| Validación | Estado esperado |
+|------------|-----------------|
+| No registra la asistencia | ✅ |
+| Devuelve mensaje de error | ✅ |
+| No modifica la base de datos | ✅ |
 
-## Registrar asistencia mediante código QR
+---
 
-  -----------------------------------------------------------------------
-  Elemento                       Descripción
-  ------------------------------ ----------------------------------------
-  Método (supuesto)              `RegistrarAsistenciaCommandHandler`
+# 5. Prueba 3 – Caso Extremo
 
-  Responsabilidad                Validar el UUID y registrar la
-                                 asistencia del empleado.
+| Etapa (AAA) | Descripción |
+|--------------|-------------|
+| **Arrange** | Enviar un UUID vacío (`Guid.Empty`) o nulo. |
+| **Act** | Ejecutar el método `RegistrarAsistenciaCommandHandler`. |
+| **Assert** | Verificar que el sistema responda con un error controlado sin producir una excepción. |
 
-  Capa                           Aplicación
+### Resultado esperado
 
-  Tecnologías                    MediatR + Entity Framework Core +
-                                 FluentValidation
-  -----------------------------------------------------------------------
+| Validación | Estado esperado |
+|------------|-----------------|
+| No ocurre una excepción | ✅ |
+| El sistema informa que el UUID es obligatorio | ✅ |
+| La base de datos permanece sin cambios | ✅ |
 
-# Prueba 1 -- Camino Feliz
+---
 
-  -------------------------------------------------------------------------
-  Patrón AAA                         Descripción
-  ---------------------------------- --------------------------------------
-  Arrange                            Se prepara un UUID válido asociado a
-                                     un empleado y a un evento activo.
+# 6. Herramientas Propuestas
 
-  Act                                Se ejecuta el método
-                                     `RegistrarAsistenciaCommandHandler`.
+| Herramienta | Propósito |
+|-------------|-----------|
+| xUnit | Framework para pruebas unitarias |
+| Moq | Simulación de dependencias |
+| Entity Framework Core InMemory | Simulación de la base de datos |
+| FluentValidation | Validación de datos de entrada |
 
-  Assert                             La asistencia se registra
-                                     correctamente y el resultado es
-                                     exitoso.
-  -------------------------------------------------------------------------
+---
 
-**Resultado esperado**
+# 7. Tecnologías del Proyecto
 
--   Registro exitoso.
--   Devuelve respuesta de éxito.
--   La asistencia queda almacenada.
-
-# Prueba 2 -- Camino Triste
-
-  -------------------------------------------------------------------------
-  Patrón AAA                         Descripción
-  ---------------------------------- --------------------------------------
-  Arrange                            Se prepara un UUID inexistente o
-                                     inválido.
-
-  Act                                Se ejecuta el método
-                                     `RegistrarAsistenciaCommandHandler`.
-
-  Assert                             El sistema rechaza la solicitud y
-                                     devuelve un mensaje indicando que el
-                                     código QR no es válido.
-  -------------------------------------------------------------------------
-
-**Resultado esperado**
-
--   No registra la asistencia.
--   Devuelve mensaje de error.
--   No modifica la base de datos.
-
-# Prueba 3 -- Caso Extremo
-
-  -------------------------------------------------------------------------
-  Patrón AAA                         Descripción
-  ---------------------------------- --------------------------------------
-  Arrange                            Se envía un UUID vacío (`Guid.Empty`)
-                                     o nulo.
-
-  Act                                Se ejecuta el método
-                                     `RegistrarAsistenciaCommandHandler`.
-
-  Assert                             El sistema valida la entrada y
-                                     responde con un error controlado sin
-                                     generar excepciones.
-  -------------------------------------------------------------------------
-
-**Resultado esperado**
-
--   No se produce un fallo del sistema.
--   Se informa que el UUID es obligatorio.
--   La base de datos permanece sin cambios.
-
-# Herramientas propuestas
-
-  -----------------------------------------------------------------------
-  Herramienta                                         Uso
-  --------------------------------------------------- -------------------
-  xUnit                                               Framework para
-                                                      pruebas unitarias.
-
-  Moq                                                 Simulación de
-                                                      dependencias
-                                                      externas.
-
-  Entity Framework Core InMemory                      Simulación de la
-                                                      base de datos
-                                                      durante las
-                                                      pruebas.
-
-  FluentValidation                                    Validación de los
-                                                      datos de entrada.
-  -----------------------------------------------------------------------
-
-## Tecnologías del proyecto
-
-  Categoría             Tecnología                              Versión
-  --------------------- --------------------------------------- ---------------------------
-  Runtime / Framework   .NET                                    8.0
-  API                   ASP.NET Core Web API                    SDK Microsoft.NET.Sdk.Web
-  Lenguaje              C#                                      12
-  Base de datos         PostgreSQL                              ---
-  ORM                   Entity Framework Core                   9.0.5
-  Provider              Npgsql.EntityFrameworkCore.PostgreSQL   9.0.4
-  CQRS                  MediatR                                 12.5.0
-  Mapeo                 AutoMapper                              12.0.1
-  Validación            FluentValidation                        12.0.0
-  Tiempo real           SignalR                                 1.2.0
-  Documentación API     Swagger                                 6.6.2
-  Contenedores          Docker + Docker Compose                 ---
-  Seguridad             PasswordHasher                          ---
+| Categoría | Tecnología | Versión |
+|-----------|------------|---------|
+| Runtime / Framework | .NET | 8.0 |
+| Tipo de proyecto | ASP.NET Core Web API | Microsoft.NET.Sdk.Web |
+| Lenguaje | C# | 12 |
+| Base de datos | PostgreSQL | — |
+| ORM | Entity Framework Core | 9.0.5 |
+| Provider | Npgsql.EntityFrameworkCore.PostgreSQL | 9.0.4 |
+| Patrón CQRS | MediatR | 12.5.0 |
+| Mapeo de objetos | AutoMapper | 12.0.1 |
+| Validación | FluentValidation | 12.0.0 |
+| Tiempo real | ASP.NET Core SignalR | 1.2.0 |
+| Documentación API | Swagger (Swashbuckle) | 6.6.2 |
+| Contenedores | Docker + Docker Compose | — |
+| Seguridad | PasswordHasher | — |
