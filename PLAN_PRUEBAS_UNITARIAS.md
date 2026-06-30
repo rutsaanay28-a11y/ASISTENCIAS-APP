@@ -56,12 +56,11 @@
 
 ### Resultado esperado
 
-| Validación | Estado esperado |
-|------------|-----------------|
-| No registra la asistencia | ✅ |
-| Devuelve mensaje de error | ✅ |
-| No modifica la base de datos | ✅ |
-
+| Validación |
+|------------|
+| No registra la asistencia | 
+| Devuelve mensaje de error | 
+| No modifica la base de datos | 
 ---
 
 # 5. Prueba 3 – Caso Extremo
@@ -74,11 +73,11 @@
 
 ### Resultado esperado
 
-| Validación | Estado esperado |
-|------------|-----------------|
-| No ocurre una excepción | ✅ |
-| El sistema informa que el UUID es obligatorio | ✅ |
-| La base de datos permanece sin cambios | ✅ |
+| Validación |
+|------------|
+| No ocurre una excepción | 
+| El sistema informa que el UUID es obligatorio |
+| La base de datos permanece sin cambios |
 
 ---
 
