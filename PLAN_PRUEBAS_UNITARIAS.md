@@ -1,9 +1,4 @@
-# Plan de Pruebas Unitarias (Propuesta)
-
-> **Nota:** Debido a que el equipo únicamente dispone del archivo APK y
-> no del código fuente del proyecto, las pruebas unitarias presentadas
-> corresponden a una **propuesta de implementación** basada en la
-> arquitectura y tecnologías del sistema.
+# Plan de Pruebas Unitarias
 
 ## 1. Información general
 
