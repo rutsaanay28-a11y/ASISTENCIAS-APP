@@ -1,5 +1,5 @@
 # QA - Bitácora de Integración
-
+ 
 | ID | Integración | Módulo Origen | Módulo Destino | Resultado Esperado | Estado |
 |----|-------------|---------------|----------------|-------------------|--------|
 | QA-001 | Login | Pantalla de Inicio | Menú Principal | El usuario inicia sesión correctamente | PASA |
