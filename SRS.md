@@ -18,9 +18,13 @@ El sistema debe generar un código QR único para cada asistencia registrada.(A)
 
 #### RF-04
 
-El sistema debe validar y registrar asistencias mediante el escaneo de códigos QR o manualmente.(A)
+El sistema debe validar y registrar asistencias mediante el escaneo de códigos QR.(A)
 
 #### RF-05
+
+El sistema debe validar y registrar asistencias manualmente.(A)
+
+#### RF-06
 
 El sistema debe permitir registrar la asistencia mediante el escaneo del código QR.(U)
 
