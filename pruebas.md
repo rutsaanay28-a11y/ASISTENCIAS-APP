@@ -1,6 +1,5 @@
 # Plan de Pruebas de Interfaz (Propuesta)
 
-> **Nota:** Las siguientes pruebas corresponden a una propuesta de validación de la interfaz de usuario basada en el funcionamiento esperado del sistema.
 
 ---
 
