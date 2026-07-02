@@ -1,0 +1,12 @@
+# Config real con secretos: nunca subir
+**/appsettings.Production.json
+**/appsettings.Local.json
+.env
+
+# Editor / SO
+.vs/
+.vscode/
+.idea/
+*.user
+Thumbs.db
+Desktop.ini

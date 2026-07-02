@@ -1,0 +1,14 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: control_asistencias_api
+    ports:
+      - "5003:5003"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://*:5003
+      # Cadena de conexion: pásala aquí o edita app/appsettings.json
+      - ConnectionStrings__DefaultConnection=Host=CAMBIAR_HOST;Port=5432;Database=CAMBIAR_DB;Username=CAMBIAR_USUARIO;Password=CAMBIAR_PASSWORD
+    restart: unless-stopped

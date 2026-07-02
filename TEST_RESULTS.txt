@@ -1,0 +1,10 @@
+Pruebas unitarias — ControlAsistencias_API.Tests (Release, net8.0)
+
+Resultado: Correctas
+  Con error:   0
+  Superado:    3
+  Omitido:     0
+  Total:       3
+
+Binario de pruebas: tests/ControlAsistencias_API.Tests.dll
+Ejecutar: dotnet test tests/ControlAsistencias_API.Tests.dll
